@@ -1,0 +1,3 @@
+[submodule "vendor/aws-inventory"]
+	path = vendor/aws-inventory
+	url = https://github.com/tongueroo/aws-inventory
