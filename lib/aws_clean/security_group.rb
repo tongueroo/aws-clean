@@ -1,5 +1,7 @@
 class AwsClean::SecurityGroup < AwsClean::Base
   def clean
+    return if ENV['TEST'] # hack for specs
+
     inventory = AwsInventory::SecurityGroup::Unused.new(report: 'unused', header: false)
     inventory.data.each do |row|
       group_name, group_id = row

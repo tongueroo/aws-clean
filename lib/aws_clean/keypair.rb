@@ -2,6 +2,8 @@ require 'pp'
 
 class AwsClean::Keypair < AwsClean::Base
   def clean
+    return if ENV['TEST'] # hack for specs
+
     inventory = AwsInventory::Keypair.new(header: false)
     inventory.data.each do |row|
       key_name, instances_count = row

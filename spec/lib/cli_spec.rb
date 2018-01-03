@@ -7,10 +7,11 @@ describe AwsClean::CLI do
 
   %w[
     sg
+    keypair
   ].each do |command|
     it command do
       out = execute("exe/aws-clean #{command} #{@args}")
-      expect(out).to include("Did not delete")
+      expect(out).to eq ""
     end
   end
 end
