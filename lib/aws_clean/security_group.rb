@@ -9,7 +9,7 @@ class AwsClean::SecurityGroup < AwsClean::Base
 
       sure = are_you_sure?("About to delete security group #{friendly_name}")
       if sure
-        # ec2.delete_security_group(group_id: group_id)
+        ec2.delete_security_group(group_id: group_id)
         puts "Deleted #{friendly_name}"
       else
         puts "Did not delete #{friendly_name}"

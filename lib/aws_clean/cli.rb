@@ -8,5 +8,11 @@ module AwsClean
     def sg
       SecurityGroup.new(options).clean
     end
+
+    desc "keypair", "clean unused keypairs"
+    long_desc Help.text(:keypair)
+    def keypair
+      Keypair.new(options).clean
+    end
   end
 end

@@ -13,4 +13,5 @@ module AwsClean
   autoload :Base, "aws_clean/base"
   autoload :AwsServices, "aws_clean/aws_services"
   autoload :SecurityGroup, "aws_clean/security_group"
+  autoload :Keypair, "aws_clean/keypair"
 end
