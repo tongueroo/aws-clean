@@ -4,7 +4,7 @@ require "aws_clean/version"
 # Use vendor version for quicker development and allows different submodules
 # in parent project.
 $:.unshift(File.expand_path("../../vendor/aws-inventory/lib", __FILE__))
-require "aws_inventory"
+require "aws-inventory"
 
 module AwsClean
   autoload :Help, "aws_clean/help"
