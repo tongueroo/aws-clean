@@ -1,3 +1,0 @@
-Examples:
-
-$ aws-clean hello
