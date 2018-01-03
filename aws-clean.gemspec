@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = AwsClean::VERSION
   spec.authors       = ["Tung Nguyen"]
   spec.email         = ["tongueroo@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{AWS clean tool}
+  spec.summary       = %q{AWS clean tool}
+  spec.homepage      = "https://github.com/tongueroo/aws-clean"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -22,6 +22,14 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thor"
   spec.add_dependency "hashie"
   spec.add_dependency "colorize"
+  spec.add_dependency "aws-sdk"
+
+  # dependencies for vendor/aws-inventory
+  spec.add_dependency "activesupport"
+  spec.add_dependency "text-table"
+  spec.add_dependency "facets"
+  spec.add_dependency "actionview"
+  spec.add_dependency "json"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "byebug"

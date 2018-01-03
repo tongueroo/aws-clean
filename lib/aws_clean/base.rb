@@ -1,7 +1,7 @@
 # Child class must implement this interface.
 # Methods:
-#   perform - removes resources.  This method is called by the clean method
-#     and by default does a dry run.
+#   clean - removes resources.  This method should use the are_you_sure? method to
+#     prompt the user before deleting.
 class AwsClean::Base
   include AwsClean::AwsServices
 
@@ -9,16 +9,12 @@ class AwsClean::Base
     @options = options
   end
 
-  def clean
-    exit unless are_you_sure?
+  def are_you_sure?(message)
+    return false if ENV['TEST']
+    return true if @options[:sure]
+    puts message
 
-    perform # interface method
-  end
-
-  def are_you_sure?
-    return true if @options[:live]
-
-    puts "Are you sure you want to run this clean up method? (yes/no)"
+    puts "Are you sure? (yes/no)"
     yes = $stdin.gets
     yes =~ /yes/
   end

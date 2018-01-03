@@ -1,19 +1,16 @@
 require "spec_helper"
 
-# to run specs with what"s remembered from vcr
-#   $ rake
-#
-# to run specs with new fresh data from aws api calls
-#   $ rake clean:vcr ; time rake
 describe AwsClean::CLI do
   before(:all) do
-    @args = "--from Tung"
+    @args = ""
   end
 
-  describe "aws-clean" do
-    it "should hello world" do
-      out = execute("exe/aws-clean hello world #{@args}")
-      expect(out).to include("from: Tung\nHello world")
+  %w[
+    sg
+  ].each do |command|
+    it command do
+      out = execute("exe/aws-clean #{command} #{@args}")
+      expect(out).to include("Did not delete")
     end
   end
 end

@@ -1,7 +1,7 @@
 module AwsClean
   class CLI < Command
     class_option :verbose, type: :boolean
-    class_option :live, type: :boolean
+    class_option :sure, type: :boolean
 
     desc "sg", "clean unused security groups"
     long_desc Help.text(:sg)

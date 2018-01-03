@@ -1,37 +1,46 @@
-# AwsClean
+# Aws Clean Tool
 
-[![Build Status](https://magnum.travis-ci.com/)](https://magnum.travis-ci.com/)
-[![Code Climate](https://codeclimate.com/)](https://codeclimate.com/)
-[![Code Climate](https://codeclimate.com/)](https://codeclimate.com/)
+This tool cleans up AWS resources.  It does aggresively confirms with "are you sure?" prompts before deleting each resource.
 
-To these the aws_clean, run these commands:
+If you want want to bypass the all the prompts you can use the `--sure` flag. Be careful using the `--sure` flag!
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```sh
-gem "aws_clean"
-```
-
-And then execute:
-
-```sh
-$ bundle
-```
-
-Or install it yourself as:
-
-```sh
-$ gem install aws_clean
-```
 ## Usage
 
 ```sh
-exe/aws_clean hello yourname
+aws-clean sg # cleans up unused security group
 ```
+
+## Install
+
+Add to Gemfile:
+
+```sh
+gem "aws-clean"
+```
+
+And then run:
+
+```sh
+bundle
+```
+
+Or install it with the gem command:
+
+```sh
+gem install aws-clean
+```
+
+## Development
+
+To develop on the bleeding edge:
+
+```sh
+git clone https://github.com/tongueroo/aws-clean
+git submodule init
+git submodule update
+```
+
+This tool uses the [aws-inventory](https://github.com/tongueroo/aws-inventory) which is vendorized under vendor/aws-inventory.
 
 ## Contributing
 
