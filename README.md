@@ -7,7 +7,8 @@ If you want want to bypass the all the prompts you can use the `--sure` flag. Be
 ## Usage
 
 ```sh
-aws-clean sg # cleans up unused security group
+aws-clean sg # cleans up unused security groups
+aws-clean keypair # cleans up unused keypairs
 ```
 
 ## Install
