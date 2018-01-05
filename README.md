@@ -4,11 +4,16 @@ This tool cleans up AWS resources.  It does aggresively confirms with "are you s
 
 If you want want to bypass the all the prompts you can use the `--sure` flag. Be careful using the `--sure` flag!
 
+This tool is useful to double check your work, it should not be relied on blindly to delete resources!
+
 ## Usage
 
 ```sh
-aws-clean sg # cleans up unused security groups
-aws-clean keypair # cleans up unused keypairs
+aws-clean keypair # cleans up unused keypairs. works well
+```
+
+```
+aws-clean sg # cleans up unused security groups. Too simple to work well. Sometimes security groups reference security groups.
 ```
 
 ## Install
